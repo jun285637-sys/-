@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>计算器 App</title>
+    <link rel="stylesheet" href="./calculator.css" />
+  </head>
+  <body>
+    <main class="calculator-page">
+      <section class="calculator-card">
+        <header class="calculator-header">
+          <h1>计算器</h1>
+          <p>支持加减乘除、小数、历史记录查询</p>
+        </header>
+
+        <section class="display-panel" aria-label="渲染区">
+          <p id="expression" class="expression-text">0</p>
+          <p id="result" class="result-text">0</p>
+        </section>
+
+        <section class="keypad-panel" aria-label="页面操作区">
+          <div class="keypad-grid" id="keypad">
+            <button class="btn btn-action" data-action="clear">AC</button>
+            <button class="btn btn-action" data-action="delete">DEL</button>
+            <button class="btn btn-operator" data-action="operator" data-value="/">÷</button>
+            <button class="btn btn-operator" data-action="operator" data-value="*">×</button>
+
+            <button class="btn" data-action="number" data-value="7">7</button>
+            <button class="btn" data-action="number" data-value="8">8</button>
+            <button class="btn" data-action="number" data-value="9">9</button>
+            <button class="btn btn-operator" data-action="operator" data-value="-">-</button>
+
+            <button class="btn" data-action="number" data-value="4">4</button>
+            <button class="btn" data-action="number" data-value="5">5</button>
+            <button class="btn" data-action="number" data-value="6">6</button>
+            <button class="btn btn-operator" data-action="operator" data-value="+">+</button>
+
+            <button class="btn" data-action="number" data-value="1">1</button>
+            <button class="btn" data-action="number" data-value="2">2</button>
+            <button class="btn" data-action="number" data-value="3">3</button>
+            <button class="btn btn-equal" data-action="equal">=</button>
+
+            <button class="btn btn-zero" data-action="number" data-value="0">0</button>
+            <button class="btn" data-action="decimal">.</button>
+          </div>
+        </section>
+      </section>
+
+      <aside class="history-card">
+        <h2>往期计算记录</h2>
+        <div class="history-toolbar">
+          <input
+            id="historySearch"
+            type="text"
+            placeholder="输入关键字查询，例如 1.5+2.4 或 3.9"
+            aria-label="查询历史记录"
+          />
+          <button id="clearHistoryBtn" class="btn btn-action">清空记录</button>
+        </div>
+        <ul id="historyList" class="history-list"></ul>
+      </aside>
+    </main>
+
+    <script src="./calculator.js"></script>
+  </body>
+  </html>
